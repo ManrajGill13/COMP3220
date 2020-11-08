@@ -1,7 +1,6 @@
 # COMP3220 - Elaboration Phase
 
-# Phase 2
-# City of Windsor
+# Phase 2 - City of Windsor
 
 ## Members
 * Ayoola, Femi

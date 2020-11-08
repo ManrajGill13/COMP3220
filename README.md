@@ -17,7 +17,8 @@ To record any changes made to this repository, we will be using Git. It allows u
 ## bug reporting tool - Github issues 
 Github issues is a great way to keep track of tasks, enhancements, and bugs for any project. They share the functionality of e-mailing except they're much more manageable and effectively shared with all collaborators of a project.
 
-## project management - Github Boards or Trello
+## project management - Github Boards
+To help us organize and prioritize work on this assignment, we will be using Github Project Boards.
 
 ## Testing Strategy - Test-driven development (JUnit)
 

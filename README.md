@@ -1,22 +1,22 @@
 # COMP3220 - Elaboration Phase
 
-##Phase 2
-#City of Windsor
+## Phase 2
+# City of Windsor
 
-#Members
-*Ayoola, Femi
-*Gill, Manraj
-*Haq, Affan
-*Ogunfowora, Ibrahim
+# Members
+* Ayoola, Femi
+* Gill, Manraj
+* Haq, Affan
+* Ogunfowora, Ibrahim
 
-#Code Repository - Github link
+# Code Repository - Github link
 
-#Version Control - Git for VCS
+# Version Control - Git for VCS
 
-#bug reporting tool - Github issues 
+# bug reporting tool - Github issues 
 
-#project management - Github Boards or Trello
+# project management - Github Boards or Trello
 
-#Testing Strategy - Test-driven development (JUnit)
+# Testing Strategy - Test-driven development (JUnit)
 
-#Documentation Repository - 
+# Documentation Repository - 

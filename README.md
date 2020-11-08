@@ -8,9 +8,15 @@
 * Haq, Affan
 * Ogunfowora, Ibrahim
 
-## Code Repository - Github link
+## Code Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
+We will be using Github—a great tool to host software development projects and maintain organized documentation.
+Our code for reading csv files from the city of windsor website is written in the repository along with our
+UML diagrams.
 
 ## Version Control - Git for VCS
+To record any changes made to this repository, we will be using Git. It allows us to preview past versions of
+the repository and direct those changes to newer versions of the project. It's an extremely useful tool that
+provides a fallback if project development goes wrong.
 
 ## bug reporting tool - Github issues 
 

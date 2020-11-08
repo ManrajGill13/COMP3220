@@ -1,1 +1,1 @@
-# COMP3220
+# COMP3220 - Elaboration Phase

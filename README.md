@@ -10,6 +10,7 @@
 
 ## Phase Plan
 We will be using verious github tools to continue to the development stage of our project and write a program that is able to take a .CSV file and convert it into an SQL table.
+
 ![image](https://raw.githubusercontent.com/ManrajGill13/COMP3220-Elaboration-Phase/main/Images/Main.jpg)
 
 ## Code Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase

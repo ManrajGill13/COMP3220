@@ -6,10 +6,9 @@ import java.sql.SQLException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
-        try (InputStream inputStream = Main.class.getResourceAsStream("Schools.csv");
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            new Data(reader);
-        }
+    public static void main(String[] args) throws IOException, SQLException {
+
+        new loadData();
+
     }
 }

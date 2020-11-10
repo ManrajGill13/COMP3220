@@ -2,18 +2,21 @@ import java.io.BufferedReader;
 import java.sql.*;
 import java.util.Arrays;
 
-public class Data {
+public class Data
+{
 
     static String sqlQuery = "INSERT INTO schools(x_coord, y_coord, fid, name, address, board) VALUES (?, ?, ?, ?, ?, ?)";
 
-    public Data(BufferedReader reader) {
+
+    public Data(BufferedReader reader)
+    {
+
         try {
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://127.0.0.1/windsor",
                     "root",
-                    ""
-            );
-            System.out.println("Database connected");
+                    "");
+            System.out.print("\nDatabase connected\n");
             PreparedStatement ps = con.prepareStatement(sqlQuery);
 
             String row;
@@ -41,7 +44,7 @@ public class Data {
                     Arrays.toString(ps.executeBatch())
             );
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
     }

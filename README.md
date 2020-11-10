@@ -9,9 +9,11 @@
 * Ogunfowora, Ibrahim
 
 ## Phase Plan
-We will be using verious github tools to continue to the development stage of our project and write a program that is able to take a .CSV file and convert it into an SQL table.
+We will be using various github tools to continue to the development stage of our project and write a program that is able to take a .CSV file and convert it into an SQL table.
 
 ![image](https://raw.githubusercontent.com/ManrajGill13/COMP3220-Elaboration-Phase/main/Images/Main.jpg)
+
+Our UML diagram explains the program's process of converting .CSV data to a table in an SQL database. All objects and entities are connect to the load data object where jobs can be split up and distributed to different functions. It then becomes the data object's job to create job queries and convert the .CSV file entries them into a table for the database. We were able to find such a file from the City of Windsor's data catalogue about schools in the city. Our goal in this phase is to have some level of working code that can accomplish these tasks.
 
 ## Code Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
 We will be using Github—a great tool to host software development projects and maintain organized documentation. Our code for reading csv files from the city of windsor website is written in the repository along with our UML diagrams.
@@ -31,8 +33,3 @@ Its data will be tokenized and then stored as an SQL database.
 
 ## Documentation Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
 We are using github to record documentation in the code as well as a code repository.
-
-## Class Diagram 
-Class diagram can be found in the images folder of the repository.
-
-

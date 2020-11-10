@@ -24,5 +24,4 @@ To help us organize and prioritize work on this assignment, we will be using Git
 We are using the following data to test whether our program will work or not: https://opendata.citywindsor.ca/opendata/details/211
 Its data will be tokenized and then stored as an SQL database.
 
-## Documentation Repository - 
-https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
+## Documentation Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase

@@ -32,4 +32,4 @@ We are using the following data to test whether our program will work or not: ht
 Its data will be tokenized and then stored as an SQL database.
 
 ## Documentation Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
-We are using github to record documentation in the code as well as a code repository.
+We are using github to record documentation in the code as well as a code repository because we feel keeping all our processes on the same platform is much more efficient.

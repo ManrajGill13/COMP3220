@@ -31,3 +31,8 @@ Its data will be tokenized and then stored as an SQL database.
 
 ## Documentation Repository - https://github.com/ManrajGill13/COMP3220-Elaboration-Phase
 We are using github to record documentation in the code as well as a code repository.
+
+## Class Diagram 
+Class diagram can be found in the images folder of the repository.
+
+

@@ -32,9 +32,6 @@ public class Main {
 
         //scrapeCardsOnWindsorSite();
         //downloadFileAndLoadIntoDatabase();
-
-        // closing the connection to database
-        DB_CONNECTION.close();
     }
 
     private static void scrapeCardsOnWindsorSite() throws IOException {

@@ -42,7 +42,7 @@ public class Data {
 
             // closing the connections
             ps.close();
-            con.close();
+            Main.DB_CONNECTION.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

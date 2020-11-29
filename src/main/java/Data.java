@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Arrays;
 
 public class Data {
@@ -10,13 +11,8 @@ public class Data {
 
         try {
 
-            // make a connection to the database
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1/windsor",
-                    "root",
-                    ""
-            );
-            System.out.println("Database connected");
+            // get connnection
+            Connection con = Main.DB_CONNECTION.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL_QUERY);
 
             String row;
@@ -43,6 +39,10 @@ public class Data {
             System.out.println(
                     Arrays.toString(ps.executeBatch())
             );
+
+            // closing the connections
+            ps.close();
+            con.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

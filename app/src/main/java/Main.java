@@ -4,7 +4,6 @@ import connection.exception.ConnectionBuildException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
@@ -30,7 +29,15 @@ public class Main {
                 .build();
 
         //scrapeCardsOnWindsorSite();
-        //downloadFileAndLoadIntoDatabase();
+
+        // Retrieve data from the data source.
+        LoadData.retrieveData(
+                "https://opendata.citywindsor.ca/Uploads/Schools.csv",
+                "C:\\Users\\BukayoDan\\COMP3220-Elaboration-Phase\\src\\main\\resources\\Schools.csv"
+        );
+
+        // read retrieved data and insert data into schools table
+        new LoadData();
     }
 
     private static void scrapeCardsOnWindsorSite() throws IOException {
@@ -84,25 +91,6 @@ public class Main {
         System.out.print("Please pick one options above: ");
         choice = scanner.nextInt();
         downloadFile(files.get(choice));
-    }
-
-    private static void downloadFileAndLoadIntoDatabase() {
-        // read file from https://opendata.citywindsor.ca/Uploads/Schools.csv and save to schools.csv
-        try (BufferedInputStream inputStream = new BufferedInputStream(new URL("https://opendata.citywindsor.ca/Uploads/Schools.csv").openStream());
-             FileOutputStream fileOS = new FileOutputStream("src/main/resources/schools.csv")) {
-            byte[] data = new byte[1024];
-            int byteContent;
-            while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
-                fileOS.write(data, 0, byteContent);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        // Retrieve data from the data source.
-        loadData.retrieveData("https://opendata.citywindsor.ca/Uploads/Schools.csv","C:\\Users\\BukayoDan\\COMP3220-Elaboration-Phase\\src\\main\\resources\\Schools.csv");
-        // read retrieved data and insert data into schools table
-        new loadData();
     }
 
     private static void downloadFile(String name) {

@@ -2,22 +2,16 @@ import java.io.BufferedReader;
 import java.sql.*;
 import java.util.Arrays;
 
-public class Data
-{
+public class Data {
 
-    static String sqlQuery = "INSERT INTO schools(x_coord, y_coord, fid, name, address, board) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String SQL_QUERY = "INSERT INTO schools(x_coord, y_coord, fid, name, address, board) VALUES (?, ?, ?, ?, ?, ?)";
 
-
-    public Data(BufferedReader reader)
-    {
+    public Data(BufferedReader reader) {
 
         try {
-            Connection con = DriverManager.getConnection(
-                    "jdbc:mysql://127.0.0.1/windsor",
-                    "root",
-                    "");
-            System.out.print("\nDatabase connected\n");
-            PreparedStatement ps = con.prepareStatement(sqlQuery);
+            // get connnection
+            Connection con = Main.DB_CONNECTION.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL_QUERY);
 
             String row;
             while ((row = reader.readLine()) != null) {
@@ -43,9 +37,13 @@ public class Data
             System.out.println(
                     Arrays.toString(ps.executeBatch())
             );
-        } catch (Exception e) {
-            System.out.println(e);
-        }
 
+            // closing the connections
+            ps.close();
+            Main.DB_CONNECTION.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

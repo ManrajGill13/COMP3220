@@ -11,13 +11,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
 
-import static spark.Spark.get;
-
 public class Main {
 
     public static Connection DB_CONNECTION;
 
-    public static void main(String[] args) throws IOException, ConnectionBuildException {
+    public static void main(String[] args) throws ConnectionBuildException {
 
         // building the connection
         DB_CONNECTION = new ConnectionBuilder()
@@ -27,8 +25,6 @@ public class Main {
                 .setUser("root")
                 .setPassword("amBWZSCnZfGLe9U8ZKCMDQEXrxRCCT")
                 .build();
-
-        get("/hello", (req, res) -> "Hello World");
 
         //scrapeCardsOnWindsorSite();
         //downloadFileAndLoadIntoDatabase();

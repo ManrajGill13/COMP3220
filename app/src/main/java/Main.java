@@ -99,8 +99,10 @@ public class Main {
             e.printStackTrace();
         }
 
-        // read schools.csv and insert data into schools table
-        new LoadData("schools.csv");
+        // Retrieve data from the data source.
+        loadData.retrieveData("https://opendata.citywindsor.ca/Uploads/Schools.csv","C:\\Users\\BukayoDan\\COMP3220-Elaboration-Phase\\src\\main\\resources\\Schools.csv");
+        // read retrieved data and insert data into schools table
+        new loadData();
     }
 
     private static void downloadFile(String name) {

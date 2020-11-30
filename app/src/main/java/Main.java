@@ -10,12 +10,15 @@ import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.*;
 
 public class Main {
 
     public static Connection DB_CONNECTION;
+    private static final List<String> CARDS = new ArrayList<>();
+    private static final Map<Integer, List<String>> FILES = new HashMap<>();
 
-    public static void main(String[] args) throws ConnectionBuildException {
+    public static void main(String[] args) throws ConnectionBuildException, IOException {
 
         // building the connection
         DB_CONNECTION = new ConnectionBuilder()
@@ -37,28 +40,50 @@ public class Main {
         System.out.printf("Page: %s\n", doc.title());
 
         // select all the cards and print their titles
-        Elements cards = doc.select("#opendata-container div div div");
-        for (Element card : cards) {
+        for (Element card : doc.select("#opendata-container div div div")) {
+            String title = card.getElementsByClass("card-title").text();
 
-            // print out the card title
-            System.out.print(card.getElementsByClass("card-title").text());
+            if (title.isEmpty()) {
+                List<String> files = new ArrayList<>();
+                for (Element file : card.select(".card-footer i")) {
+                    String t = file.attr("title");
 
-            // get all the files in the footer
-            Elements files = card.select(".card-footer i");
-            for (Element file : files) {
+                    if (t.toLowerCase().contains("show details"))
+                        continue;
 
-                String title = file.attr("title");
-
-                if (title.toLowerCase().contains("show details")) {
-                    continue;
+                    files.add(t);
                 }
-
-                System.out.printf("\t -> %s\n", file.attr("title"));
-
-                // TODO: download each file -> https://opendata.citywindsor.ca/Uploads/${file.attr("title")}
+                FILES.put(CARDS.size() - 1, files);
+            } else {
+                CARDS.add(title);
             }
-            System.out.println();
         }
+
+        //Handle user input.
+
+        // print all the options
+        for (int i = 0; i < CARDS.size(); i++) {
+            System.out.printf("%d => %s\n", i, CARDS.get(i));
+        }
+
+        // take user input
+        System.out.println("===============================");
+        System.out.print("Please pick one options above: ");
+        Scanner scanner = new Scanner(System.in);
+        int choice = scanner.nextInt();
+
+        System.out.print("\n\n\n");
+
+        List<String> files = FILES.get(choice);
+        for (int i = 0; i < files.size(); i++) {
+            System.out.printf("%d => %s\n", i, files.get(i));
+        }
+
+        // take user input
+        System.out.println("===============================");
+        System.out.print("Please pick one options above: ");
+        choice = scanner.nextInt();
+        downloadFile(files.get(choice));
     }
 
     private static void downloadFileAndLoadIntoDatabase() {
@@ -76,5 +101,18 @@ public class Main {
 
         // read schools.csv and insert data into schools table
         new LoadData("schools.csv");
+    }
+
+    private static void downloadFile(String name) {
+        try (BufferedInputStream inputStream = new BufferedInputStream(new URL("https://opendata.citywindsor.ca/Uploads/" + name).openStream());
+             FileOutputStream fileOS = new FileOutputStream("src/main/resources/" + name)) {
+            byte[] data = new byte[1024];
+            int byteContent;
+            while ((byteContent = inputStream.read(data, 0, 1024)) != -1) {
+                fileOS.write(data, 0, byteContent);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

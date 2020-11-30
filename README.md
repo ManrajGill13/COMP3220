@@ -2,6 +2,10 @@
 
 # Phase 2 - City of Windsor
 
+## Parts
+#### [APP](/app) (Java, JDBC, JSoup)
+#### [API](/api) (PHP, Flight, Sparrow)
+
 ## Members
 * Ayoola, Femi
 * Gill, Manraj

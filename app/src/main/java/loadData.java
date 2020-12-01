@@ -4,8 +4,7 @@ import java.net.URL;
 public class LoadData {
 
     public LoadData() {
-        try (InputStream inputStream = Main.class.getResourceAsStream("Schools.csv");
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/main/resources/Schools.csv")))) {
             new Data(reader);
         } catch (IOException e) {
             e.printStackTrace();

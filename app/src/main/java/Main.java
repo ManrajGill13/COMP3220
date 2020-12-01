@@ -33,7 +33,7 @@ public class Main {
         // Retrieve data from the data source.
         LoadData.retrieveData(
                 "https://opendata.citywindsor.ca/Uploads/Schools.csv",
-                "C:\\Users\\BukayoDan\\COMP3220-Elaboration-Phase\\src\\main\\resources\\Schools.csv"
+                "src/main/resources/Schools.csv"
         );
 
         // read retrieved data and insert data into schools table

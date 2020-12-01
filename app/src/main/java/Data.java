@@ -35,7 +35,7 @@ public class Data {
             }
 
             System.out.println(
-                    Arrays.toString(ps.executeBatch())
+                    "Inserted " + ps.executeBatch().length + " rows."
             );
 
             // closing the connections

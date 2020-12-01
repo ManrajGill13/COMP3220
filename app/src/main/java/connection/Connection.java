@@ -28,7 +28,7 @@ public class Connection {
                         user,
                         password
                 );
-                System.out.println("Database connected");
+                System.out.println("Database connected.");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
